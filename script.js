@@ -6,6 +6,10 @@ const docBody = document.body;
 console.log(docElement);
 console.log(docHead);
 console.log(docBody);
+
+
+//ИЗМЕНЕНИЕ ФАЙЛОВ ДОМА
+
 // получаем элемент х1
 const htmlElem = document.querySelector("h1");
 const htmlInner = htmlElem.innerHTML;
@@ -15,6 +19,56 @@ htmlElem.innerHTML = "Lilya";
 // дописываем содержимое элемента
 htmlElem.innerHTML = `${htmlInner} <span class = "yellow">lox</span> `;
 console.log(htmlElem.innerHTML);
+
+//получаем содержимое объекта и оболочку этого объекта h1
+// при изменении содержиого элемента и повторном вызове в консоль мы получим старые данные 
+const textElementContent = htmlElem.outerHTML;
+console.log(textElementContent);
+
+
+//.textContent безопасное изменение текста получаем голый текст вставленные хтмл теги превращаются в строку 
+const hTwo = document.querySelector('h2');
+const hTwoContent = hTwo.textContent;
+console.log(hTwoContent);
+hTwo.textContent = '<p>ne lalala</p>';
+//.data содердимое текстового узла или комментария 
+const getPar = document.querySelector('.list');
+const getCom = getPar.nextSibling;
+console.log(getCom);
+console.log(getCom.data);
+// изменение текстового узла комментария 
+getCom.data = 'Привет';
+console.log(getCom.data);
+// МЕТОД СОЗДАНИЯ ЭЛЕМЕНТОВ И УЗЛОВ .createElement() тега например див
+const newElement = document.createElement('div');
+console.log(newElement);
+//наполняем новый элемент 
+newElement.innerHTML = `Привет, я новый <span>Элемент</span>`;
+//создание текстового узла .createTextNode
+const crNewText = document.createTextNode('Privet');
+console.log(crNewText);
+/* СОЗДАННЫЕ ОБЪЕКТЫ НАХОДЯТСЯ В КОНСТАНТАХ
+НО НЕ ЯВЛЯЮТСЯ ЧАСТЬЮ ДОКУМЕНТА */
+
+
+//МЕТОДЫ ВСТАВКИ 
+const getElem = document.querySelector('.zalupa');
+const doNewElem = document.createElement('div');
+doNewElem.innerHTML = 'ya drug zalupi';
+// теперь мы вставляем новый элемент перед уже готовыми элементами разными способами
+
+// новый элемент перед старым 
+getElem.before(doNewElem);
+//после элемента
+getElem.after(doNewElem);
+//внутрь и в начала объекта тоесть внутрь уже существуещего дива
+getElem.prepend(doNewElem);
+//внутрь и в конец объекта внутрь дива в конец объекта
+getElem.append(doNewElem);
+
+
+
+
 
 // первые и последнии узлы данного объекта 
 // const firstChildNode = docBody.firstChild;
