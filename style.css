@@ -1,4 +1,11 @@
 h1  {
 display: block;
 text-align: center;
-}
+};
+
+span { 
+    display: block;
+    text-align: center;
+    color: yellow;
+    font-size: large;
+};

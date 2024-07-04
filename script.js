@@ -6,57 +6,67 @@ const docBody = document.body;
 console.log(docElement);
 console.log(docHead);
 console.log(docBody);
+// получаем элемент х1
+const htmlElem = document.querySelector("h1");
+const htmlInner = htmlElem.innerHTML;
+console.log(htmlInner);
+// изменяем элемент х1 
+htmlElem.innerHTML = "Lilya";
+// дописываем содержимое элемента
+htmlElem.innerHTML = `${htmlInner} <span class = "yellow">lox</span> `;
+console.log(htmlElem.innerHTML);
+
 // первые и последнии узлы данного объекта 
-const firstChildNode = docBody.firstChild;
-const lastChildNode = docBody.lastChild;
+// const firstChildNode = docBody.firstChild;
+// const lastChildNode = docBody.lastChild;
 
-console.log(firstChildNode);
-console.log(lastChildNode);
+// console.log(firstChildNode);
+// console.log(lastChildNode);
 
-// код написанный после подключенного файла скрипта не будет читаться 
-
-
-// получаем коллекцию со всеми детьми объкта боди
-const childNodes = docBody.childNodes;
-console.log(childNodes);
-// проверка на детей отдает булин 
-console.log(docBody.hasChildNodes());
-
-// перебор коллекции чайлднодес через фор оф 
-for (let cal of childNodes) { 
-    console.log(cal);
-};
+// // код написанный после подключенного файла скрипта не будет читаться 
 
 
+// // получаем коллекцию со всеми детьми объкта боди
+// const childNodes = docBody.childNodes;
+// console.log(childNodes);
+// // проверка на детей отдает булин 
+// console.log(docBody.hasChildNodes());
 
-// движение по узлу 
+// // перебор коллекции чайлднодес через фор оф 
+// for (let cal of childNodes) { 
+//     console.log(cal);
+// };
 
-const previousSublingNode = docBody.previousSibling;
-const nextSublingNode = docBody.nextSibling;
-const parentNode = docBody.parentNode;
 
-console.log(previousSublingNode);
-console.log(nextSublingNode);
-console.log(parentNode);
 
-// получение элементов без хуйни 
+// // движение по узлу 
 
-const bodyChildren = docBody.children;
+// const previousSublingNode = docBody.previousSibling;
+// const nextSublingNode = docBody.nextSibling;
+// const parentNode = docBody.parentNode;
 
-console.log(bodyChildren);
-// поиск по имени класса тегу айди и тд выдает коллекцию всех элементов по данному названию
-const elemOne = document.querySelectorAll(".list");
-const elemTwo = document.querySelectorAll("li");
-const elemThree = document.querySelectorAll("jopa");
-console.log(elemThree);
-console.log(elemTwo);
-console.log(elemOne);
-//получение сразу объекта из коллекции 
-console.log(elemTwo[2]);// получили третий объект списка перебор через фор оф 
-for (let item of elemTwo) {
-    console.log(item);
-};// получили перебор всего списка li
+// console.log(previousSublingNode);
+// console.log(nextSublingNode);
+// console.log(parentNode);
 
-// сразу дает первый подходящий по поиску объект не возвращает коллекцию из всех объектов 
-const li = document.querySelector("li");
-console.log(li);
+// // получение элементов без хуйни 
+
+// const bodyChildren = docBody.children;
+
+// console.log(bodyChildren);
+// // поиск по имени класса тегу айди и тд выдает коллекцию всех элементов по данному названию
+// const elemOne = document.querySelectorAll(".list");
+// const elemTwo = document.querySelectorAll("li");
+// const elemThree = document.querySelectorAll("jopa");
+// console.log(elemThree);
+// console.log(elemTwo);
+// console.log(elemOne);
+// //получение сразу объекта из коллекции 
+// console.log(elemTwo[2]);// получили третий объект списка перебор через фор оф 
+// for (let item of elemTwo) {
+//     console.log(item);
+// };// получили перебор всего списка li
+
+// // сразу дает первый подходящий по поиску объект не возвращает коллекцию из всех объектов 
+// const li = document.querySelector("li");
+// console.log(li);
